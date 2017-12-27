@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>heart</title>
+    <style>
+        .heart,
+        .heart:before,
+        .heart:after{
+            width: 200px;
+            height:  200px;
+            background-color: red;
+        }
+        .heart{
+            position: relative;
+            transform: rotate(45deg);
+            margin: 200px auto;
+            filter: drop-shadow(0 0 20px rgb(255,20,20));
+            animation:  heartbeat 1s infinite;
+        }
+        .heart:before,
+        .heart:after{
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+        }
+        .heart:before{
+            left: -100px;
+        }
+        .heart:after{
+            top: -100px;
+        }
+        @keyframes heartbeat {
+            0% {
+                transform:  rotate(45deg) scale(0.8, 0.8);
+                opacity: 1;
+            }
+            25% {
+                transform:  rotate(45deg) scale(1, 1);
+                opacity: 0.8;
+            }
+            100%{
+                transform:  rotate(45deg) scale(0.8, 0.8);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="heart"></div>
+</body>
+</html>
