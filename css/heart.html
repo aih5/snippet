@@ -18,10 +18,13 @@
         }
         .heart{
             position: relative;
-            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+                    transform: rotate(45deg);
             margin: 200px auto;
-            filter: drop-shadow(0 0 20px rgb(255,20,20));
-            animation:  heartbeat 1s infinite;
+            -webkit-filter: drop-shadow(0 0 20px rgb(255,20,20));
+                    filter: drop-shadow(0 0 20px rgb(255,20,20));
+            -webkit-animation:  heartbeat 1s infinite;
+                    animation:  heartbeat 1s infinite;
         }
         .heart:before,
         .heart:after{
@@ -35,17 +38,37 @@
         .heart:after{
             top: -100px;
         }
-        @keyframes heartbeat {
+        @-webkit-keyframes heartbeat {
             0% {
-                transform:  rotate(45deg) scale(0.8, 0.8);
+                -webkit-transform:  rotate(45deg) scale(0.8, 0.8);
+                        transform:  rotate(45deg) scale(0.8, 0.8);
                 opacity: 1;
             }
             25% {
-                transform:  rotate(45deg) scale(1, 1);
+                -webkit-transform:  rotate(45deg) scale(1, 1);
+                        transform:  rotate(45deg) scale(1, 1);
                 opacity: 0.8;
             }
             100%{
-                transform:  rotate(45deg) scale(0.8, 0.8);
+                -webkit-transform:  rotate(45deg) scale(0.8, 0.8);
+                        transform:  rotate(45deg) scale(0.8, 0.8);
+                opacity: 1;
+            }
+        }
+        @keyframes heartbeat {
+            0% {
+                -webkit-transform:  rotate(45deg) scale(0.8, 0.8);
+                        transform:  rotate(45deg) scale(0.8, 0.8);
+                opacity: 1;
+            }
+            25% {
+                -webkit-transform:  rotate(45deg) scale(1, 1);
+                        transform:  rotate(45deg) scale(1, 1);
+                opacity: 0.8;
+            }
+            100%{
+                -webkit-transform:  rotate(45deg) scale(0.8, 0.8);
+                        transform:  rotate(45deg) scale(0.8, 0.8);
                 opacity: 1;
             }
         }
