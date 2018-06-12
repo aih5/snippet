@@ -2,27 +2,79 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>列表</title>
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>代码片段</title>
     <style>
-        body {
-            padding: 0;
-            margin: 0;
+        *{padding: 0; margin: 0; box-sizing: border-box;}
+        html,body{
+            width: 100%;
+            height: 100%;
         }
-        a{
+        .container{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        section{
+            display: flex;
+            flex: 1;
+        }
+        header{
+            height: 80px;
+            border-bottom: 1px solid #ddd;
+        }
+        aside{
+            width: 200px;
+            height: 100%;
+            border-right: 1px solid #ddd;
+        }
+        .section{
+            flex: 1;
+            height: 100%;
+        }
+        iframe{
+            width: 100%;
+            height: 100%;
+            vertical-align:top 
+        }
+        #navs li a{
             display: block;
-            padding: 10px;
-            background-color: #839EF5;
-            color: #fff;
-            text-decoration: none;
-        }
-        a:hover {
-            background-color: #5479F2;
-            color: red;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            background-color: rgb(221, 221, 221);
+            border-bottom: 1px solid #ccc;
         }
     </style>
 </head>
 <body>
-    <a href="css/heart.html">跳动的心</a>
+    <div class="container">
+        <!-- header -->
+        <header></header>
+        <!-- 正文 -->
+        <section>
+            <!-- 左侧导航 -->
+            
+            <aside>
+                <ul id="navs">
+                    <li><a data-href="css/heart.html">跳动的心</a></li>
+                    <li><a data-href="https://blog.csdn.net/wangjun5159/article/details/72609970">iframe 高度100%时，出现垂直滚动条</a></li>
+                </ul>
+            </aside>
+            <div class="section">
+                <iframe id="iframe" src="./css/heart.html" frameborder="0" scrolling="yes"></iframe>
+            </div>
+        </section>
+    </div>
+<script>
+    navs.onclick = function(e) {
+        let dom = e.target;
+        if(dom.nodeName == 'A'){
+            iframe.src = dom.getAttribute('data-href');
+        }
+    }
+</script>
 </body>
 </html>
